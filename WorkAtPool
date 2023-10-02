@@ -1,0 +1,23 @@
+namespace WorkAtPool;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int people = int.Parse(Console.ReadLine());
+        double entrancePrice = double.Parse(Console.ReadLine());
+        double bedPrice = double.Parse(Console.ReadLine());
+        double umbrellaPrice = double.Parse(Console.ReadLine());
+
+        double neededUmbrellas = people / 2;
+        double neededBeds = people * 0.8;
+
+        double umbrellasPrice = neededUmbrellas * umbrellaPrice;
+        double bedsPrice = neededBeds * bedPrice;
+        double entrance = people * entrancePrice;
+
+        double finalSum = umbrellasPrice + bedsPrice + entrance;
+
+        Console.WriteLine($"Total cost:{finalSum:f2} lv.");
+    }
+}
+
