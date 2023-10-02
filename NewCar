@@ -1,0 +1,19 @@
+namespace NewCar;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int eterium = int.Parse(Console.ReadLine());
+        double lv = double.Parse(Console.ReadLine());
+        double commision = double.Parse(Console.ReadLine());
+
+        double eteriumLv = eterium * 1168 ;
+        double allLv = eteriumLv + lv;
+        double euro = allLv / 1.95;
+
+        double final = commision / 100 * euro;
+        double finalSum = euro - final;
+
+        Console.WriteLine($"{finalSum}");
+    }
+}
