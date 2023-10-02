@@ -1,0 +1,43 @@
+namespace Zoo;
+class Program
+{
+    static void Main(string[] args)
+    {
+        double budget = double.Parse(Console.ReadLine());
+        double fuel = double.Parse(Console.ReadLine());
+        string dayOfWeek = Console.ReadLine();
+
+        double priceForFuel = fuel * 2.80;
+        double priceWithGuide = priceForFuel + 85;
+
+        if (dayOfWeek == "Sunday")
+        {
+            priceWithGuide = priceWithGuide * 0.75;
+            if (budget >= priceWithGuide)
+            {
+                budget = budget - priceWithGuide;
+                Console.WriteLine($"Zoo time! Money left: {budget:f2} lv.");
+            }
+            else if (budget < priceWithGuide)
+            {
+                budget = priceWithGuide - budget;
+                Console.WriteLine($"Not enough money! Money needed: {budget:f2} lv.");
+            }
+        }
+        else if (dayOfWeek == "Saturday")
+        {
+            priceWithGuide = priceWithGuide * 0.80;
+            if (budget >= priceWithGuide)
+            {
+                budget = budget - priceWithGuide;
+                Console.WriteLine($"Zoo time! Money left: {budget:f2} lv.");
+            }
+            else if (budget < priceWithGuide)
+            {
+                budget = priceWithGuide - budget;
+                Console.WriteLine($"Not enough money! Money needed: {budget:f2} lv.");
+            }
+        }
+    }
+}
+
