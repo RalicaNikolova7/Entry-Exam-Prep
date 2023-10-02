@@ -1,0 +1,30 @@
+namespace Vacation2;
+class Program
+{
+    static void Main(string[] args)
+    {
+        double budget = double.Parse(Console.ReadLine());
+        double nightPrice = double.Parse(Console.ReadLine());
+        int nights = int.Parse(Console.ReadLine());
+        int otherPercent = int.Parse(Console.ReadLine());
+
+        double price1 = nightPrice * nights;
+        double price2 = otherPercent * budget;
+        double price3 = price1 + price2;
+
+        if (nights>7)
+        {
+            nightPrice = nightPrice - (nightPrice * 0.1);
+        }
+
+        if (price3 >= budget)
+        {
+            Console.WriteLine($"Petrovi will be left with {budget - price3} leva after vacation.");
+        }
+        else
+        {
+            Console.WriteLine($"{price3 - budget} leva needed.");
+        }
+    }
+}
+
