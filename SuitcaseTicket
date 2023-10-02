@@ -1,0 +1,61 @@
+namespace SuitcaseTicket;
+class Program
+{
+    static void Main(string[] args)
+    {
+        double price = double.Parse(Console.ReadLine());
+        double kg = double.Parse(Console.ReadLine());
+        int days = int.Parse(Console.ReadLine());
+        int suitcases = int.Parse(Console.ReadLine());
+
+        if(kg < 10)
+        {
+            price = price * 0.25 * suitcases;
+            if (days > 30)
+            {
+                price = price + (0.15 * price);
+            }
+            else if(days >= 7 && days <= 30)
+            {
+                price = price + (0.25 * price);
+            }
+            else if (days < 7)
+            {
+                price = price + (0.45 * price);
+            }
+        }
+        else if (kg >= 10 && days <= 20)
+        {
+            price = price * 0.6 * suitcases;
+            if (days > 30)
+            {
+                price = price + (0.15 * price);
+            }
+            else if (days >= 7 && days <= 30)
+            {
+                price = price + (0.25 * price);
+            }
+            else if (days < 7)
+            {
+                price = price + (0.45 * price);
+            }
+        }
+        else 
+        {
+            if (days > 30)
+            {
+                price = price + (0.15 * price)*suitcases;
+            }
+            else if (days >= 7 && days <= 30)
+            {
+                price = price + (0.25 * price)*suitcases;
+            }
+            else if (days < 7)
+            {
+                price = price + (0.45 * price)*suitcases;
+            }
+        }
+        Console.WriteLine($"The total price of bags is: {price:f2} lv.");
+             
+    }
+}
